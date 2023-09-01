@@ -15,7 +15,7 @@ def connect_db(app):
     db.init_app(app)
 
 class Pet(db.Model):
-    """Pet"""
+    """Creates pet instance"""
 
     __tablename__ = "pets"
 
@@ -39,20 +39,20 @@ class Pet(db.Model):
         db.String,
         nullable=False,
         default=''
-    )
+        )
 
     age = db.Column(
         db.String,
         nullable=False
-    )
+        )
 
     notes = db.Column(
         db.String,
         nullable=True
-    )
+        )
 
     available = db.Column(
         db.Boolean,
         nullable=False,
         default=True
-    )
+        )

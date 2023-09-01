@@ -3,23 +3,25 @@
 {% block title %}All Pets{% endblock %}
 
 {% block content %}
-<div class="container">
-  <ul>
-    {% for pet in pets %}
-    {% if pet.available %}
-    <li><a href="/{{ pet.id }}">{{ pet.name }} </a><b>Is Available</b></li>
-    {% if pet.photo_url != '' %}
-    <img src="{{ pet.photo_url }}" alt="">
-    {% endif %}
-    {% else %}
-    <li><a href="/{{ pet.id }}">{{ pet.name }}</a></li>
-    {% if pet.photo_url != '' %}
-    <img src="{{ pet.photo_url }}" alt="">
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-  </ul>
-  <a href="/add">Add Pet</a>
-</div>
+<h1>Adoption Agency</h1>
+<ul>
+  {% for pet in pets %}
+  {% if pet.available %}
+  <li><a href="/{{ pet.id }}">{{ pet.name }} </a><b>Is Available</b></li>
+  {% if pet.photo_url != '' %}
+  <img src="{{ pet.photo_url }}" alt="">
+  {% endif %}
+  {% else %}
+  <li><a href="/{{ pet.id }}">{{ pet.name }}</a></li>
+  {% if pet.photo_url != '' %}
+  <img src="{{ pet.photo_url }}" alt="">
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+</ul>
+<a href="/add">Add Pet</a>
 
+{% for message in get_flashed_messages() %}
+  <p style="color: red">{{ message }}</p>
+{% endfor %}
 {% endblock %}
