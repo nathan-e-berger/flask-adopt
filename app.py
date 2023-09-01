@@ -22,3 +22,30 @@ connect_db(app)
 # app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 toolbar = DebugToolbarExtension(app)
+
+@app.get("/")
+def show_homepage():
+    pet = Pet.query.all()
+    return render_template("homepage.html", pet=pet)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
