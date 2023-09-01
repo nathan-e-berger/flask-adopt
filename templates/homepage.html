@@ -3,5 +3,20 @@
 {% block title %}All Pets{% endblock %}
 
 {% block content %}
+<div class="container">
+  <ul>
+    {% for pet in pets %}
+      {% if pet.available is True %}
+        <li>{{ pet.name }}<b>{{ pet.available }}</b></li>
+        {% if pet.photo_url != '' %}
+        <img src="{{ pet.photo_url }}" alt="">
+      {% else %}
+        <li>{{ pet.name }}</li>
+        {% if pet.photo_url != '' %}
+        <img src="{{ pet.photo_url }}" alt="">
+    {% endfor %}
+  </ul>
+  <a href="#">Add Pet</a>
+</div>
 
 {% endblock %}
