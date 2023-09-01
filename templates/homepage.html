@@ -9,12 +9,12 @@
   {% if pet.available %}
   <li><a href="/{{ pet.id }}">{{ pet.name }} </a><b>Is Available</b></li>
   {% if pet.photo_url != '' %}
-  <img src="{{ pet.photo_url }}" alt="">
+  <img width="200px" src="{{ pet.photo_url }}" alt="">
   {% endif %}
   {% else %}
   <li><a href="/{{ pet.id }}">{{ pet.name }}</a></li>
   {% if pet.photo_url != '' %}
-  <img src="{{ pet.photo_url }}" alt="">
+  <img width="200px" src="{{ pet.photo_url }}" alt="">
   {% endif %}
   {% endif %}
   {% endfor %}

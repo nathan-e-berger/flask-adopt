@@ -27,7 +27,7 @@ class EditPetForm(FlaskForm):
     """Form for editing pets"""
 
     photo_url = photo_url = StringField("Image URL", validators=[URL(), Optional()])
-
+    #FIXME: TextAreaField instead of StringField
     notes = StringField("Additional Information", validators=[Optional()])
 
     available = BooleanField("Is Available?")
