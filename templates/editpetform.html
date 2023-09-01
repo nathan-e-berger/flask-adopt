@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Add Pet
+Edit Pet
 {% endblock %}
 
 {% block content %}
-<form id="add-pet-form" method="POST">
+<form id="edit-pet-form" method="POST">
   {{ form.hidden_tag() }}
 
   {% for field in form

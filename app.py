@@ -43,11 +43,17 @@ def add_pet():
         photo_url = form.photo_url.data
         age = form.age.data
         notes = form.notes.data
+        pet = Pet(name=name, species=species, photo_url=photo_url,
+                  age=age, notes=notes)
+        db.session.add(pet)
+        db.session.commit()
 
-        return redirect("/add")
+        return redirect("/")
 
     else:
-        return render_template("#", form=form)
+        return render_template("addpetform.html", form=form)
+
+
 
 
 
